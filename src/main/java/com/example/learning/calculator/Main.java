@@ -35,21 +35,22 @@ public class Main {
     }
 
     private static void additionOperation(Scanner scanner, Calculator calculator) {
-        System.out.println("Enter first number:");
-        int firstNumber = scanner.nextInt();
-        System.out.println("Enter second number:");
-        int secondNumber = scanner.nextInt();
-        int result = calculator.addition(firstNumber, secondNumber);
-        System.out.println(firstNumber + "+" + secondNumber + "=" + result);
+        int[] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
+        int result = calculator.addition(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+        System.out.println(twoNumbersFromInput[0] + "+" + twoNumbersFromInput[1] + "=" + result);
     }
 
     private static void substractOperation(Scanner scanner, Calculator calculator) {
+        int[] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
+        int result = calculator.substraction(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+        System.out.println(twoNumbersFromInput[0] + "-" + twoNumbersFromInput[1] + "=" + result);
+    }
+
+    private static int[] getTwoNumbersFromInput(Scanner scanner){
         System.out.println("Enter first number:");
         int firstNumber = scanner.nextInt();
         System.out.println("Enter second number:");
         int secondNumber = scanner.nextInt();
-        int result = calculator.substraction(firstNumber, secondNumber);
-        System.out.println(firstNumber + "-" + secondNumber + "=" + result);
+        return new int[]{firstNumber,secondNumber};
     }
-
 }
